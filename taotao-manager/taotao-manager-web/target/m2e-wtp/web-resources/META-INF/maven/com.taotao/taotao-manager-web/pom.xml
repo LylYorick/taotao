@@ -10,6 +10,17 @@
 	<packaging>war</packaging>
 	<!-- 添加依赖 -->
 	<dependencies>
+		<!-- 单元测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.taotao</groupId>
+			<artifactId>taotao-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>com.taotao</groupId>
 			<artifactId>taotao-manager-service</artifactId>
@@ -34,6 +45,11 @@
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.oschina.zcx7878</groupId>
+			<artifactId>fastdfs-client-java</artifactId>
+			<version>1.27.0.0</version>
 		</dependency>
 	</dependencies>
 </project>
