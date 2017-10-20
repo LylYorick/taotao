@@ -30,4 +30,15 @@ public class ContentController {
 		}
 	}
 	
+	@RequestMapping("/syscn/content/{cid}")
+	@ResponseBody
+	public TaotaoResult syscnContent(@PathVariable Long cid){
+		try {
+			TaotaoResult taotaoResult = contentService.syscnContent(cid);
+			return taotaoResult;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return TaotaoResult.build(500,ExceptionUtil.getStackTrace(e));
+		}
+	}
 }
