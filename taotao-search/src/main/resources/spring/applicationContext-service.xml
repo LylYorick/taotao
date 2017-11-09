@@ -8,15 +8,15 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
-	<!-- 加载配置文件 -->
-	<context:property-placeholder location="classpath:properties/*.properties" />
 	<!-- 扫描包加载Service实现类 -->
-	<context:component-scan base-package="com.taotao.portal.service"></context:component-scan>
+	<context:component-scan base-package="com.taotao.search.service,com.taotao.search.dao"></context:component-scan>
 	
-	<bean id="freemarkerConfig"
-		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-		<property name="templateLoaderPath" value="/WEB-INF/ftl/" />
-		<property name="defaultEncoding" value="UTF-8" />
+	<!-- 配置单机版SolrServer -->
+	<bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+		<constructor-arg name="baseURL" value="http://192.168.164.132:8080/solr"></constructor-arg>
 	</bean>
-	
+	<!-- <bean id="cloudSolrServer" class="org.apache.solr.client.solrj.impl.CloudSolrServer">
+		<constructor-arg name="zkHost" value="192.168.164.132:2181,192.168.164.132:2182,192.168.164.132:2183" ></constructor-arg>
+		<property name="defaultCollection" value="collection2"></property>
+	</bean> -->
 </beans>

@@ -11,6 +11,7 @@ classes/
 target/
 release.properties
 
+
 # Files for the Dalvik VM
 *.dex
 

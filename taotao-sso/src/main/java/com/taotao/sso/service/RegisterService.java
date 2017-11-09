@@ -1,0 +1,7 @@
+package com.taotao.sso.service;
+
+import com.taotao.common.pojo.TaotaoResult;
+
+public interface RegisterService {
+	 TaotaoResult checkData(String param,int type);
+}
