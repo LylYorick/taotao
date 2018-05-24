@@ -30,6 +30,19 @@ public class ContentServiceImpl implements ContentService {
 		contentMapper.insert(content);
 		return TaotaoResult.ok();
 	}
+	
+	
+	
+	@Override
+	public TaotaoResult editContent(TbContent content) {
+		content.setCreated(new Date());
+		content.setUpdated(new Date());
+		contentMapper.updateByPrimaryKeyWithBLOBs(content);
+		return TaotaoResult.ok();
+	}
+
+
+
 	/**
 	 *  分页获取的content
 	 * @param page 页码

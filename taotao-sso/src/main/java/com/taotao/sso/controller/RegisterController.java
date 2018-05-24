@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.ExceptionUtil;
+import com.taotao.pojo.TbUser;
 import com.taotao.sso.service.RegisterService;
 
 @Controller
@@ -29,6 +30,17 @@ public class RegisterController {
 				return jacksonValue;
 			}
 			return taotaoResult;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
+		}
+	}
+	@RequestMapping("/register")
+	@ResponseBody
+	public TaotaoResult register(TbUser user){
+		try {
+			TaotaoResult result = registerService.register(user);
+			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));

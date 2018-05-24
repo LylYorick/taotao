@@ -26,7 +26,6 @@ public class ItemServiceImpl implements ItemService {
 	public TaotaoResult importItems() throws Exception {
 		//查询数据库获得商品列表
 		List<SearchItem> itemList = itemMapper.getItemList();
-	
 		for (SearchItem item : itemList) {
 			//创建文档对象
 			SolrInputDocument document = new SolrInputDocument();
@@ -38,7 +37,6 @@ public class ItemServiceImpl implements ItemService {
 			document.addField("item_image", item.getImage());
 			document.addField("item_price", item.getPrice());
 			document.addField("item_desc", item.getItem_desc());
-			
 			solrServer.add(document);
 		}
 		//提交

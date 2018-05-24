@@ -6,7 +6,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-
+<!-- 加载配置文件 -->
+	<context:property-placeholder location="classpath:properties/*.properties" />
 	<!-- 配置包扫描器 -->
 	<context:component-scan base-package="com.taotao.portal.controller" />
 	<!-- 配置注解驱动 -->
@@ -15,4 +16,11 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+		<!-- 登录拦截器  -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/order/**"/>
+			<bean class="com.taotao.portal.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>

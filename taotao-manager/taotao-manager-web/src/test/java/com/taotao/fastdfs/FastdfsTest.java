@@ -17,7 +17,7 @@ public class FastdfsTest {
 		// 1、把FastDFS提供的jar包添加到工程中
 		// 2、初始化全局配置。加载一个配置文件。
 		// 3、创建一个TrackerClient对象。
-		ClientGlobal.init("E:\\learningsoft\\eclipseWorkspaces\\personalWorkspace\\taotao\\taotao-manager\\taotao-manager-web\\src\\main\\resources\\resource\\client.conf");
+		ClientGlobal.init("E:\\learningsoft\\eclipseWorkspaces\\personalWorkspace\\taotao\\taotao-manager\\taotao-manager-web\\src\\main\\resources\\properties\\client.conf");
 		TrackerClient trackerClient  =  new  TrackerClient();
 		// 4、创建一个TrackerServer对象。
 		TrackerServer trackerServer = trackerClient.getConnection();

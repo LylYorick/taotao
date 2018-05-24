@@ -34,7 +34,7 @@ public class SolrTest {
 	@Test
 	public void testQuery() throws SolrServerException{
 		//创建连接 solr 单机版使用HttpSolrServer
-		SolrServer solrServer = new  HttpSolrServer("http://192.168.164.132:8080/solr");
+		SolrServer solrServer = new  HttpSolrServer("http://192.168.159.133:8080/solr");
 		//创建一个查询连接
 		SolrQuery query = new SolrQuery();
 		query.setQuery("*:*");

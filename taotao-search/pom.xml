@@ -71,7 +71,7 @@
 			</plugin>
 		</plugins>
 		<!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
-		<!-- <resources>
+	 <resources>
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
@@ -88,6 +88,6 @@
                 </includes>
                 <filtering>false</filtering>
             </resource>
-        </resources> -->
+        </resources>
 	</build>
 </project>

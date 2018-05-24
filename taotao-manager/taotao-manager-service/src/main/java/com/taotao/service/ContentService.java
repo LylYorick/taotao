@@ -9,6 +9,10 @@ import com.taotao.pojo.TbContent;
 public interface ContentService {
 	TaotaoResult insertContent(TbContent content);
 	/**
+	 * 修改内容
+	 */
+	TaotaoResult editContent(TbContent content);
+	/**
 	 * @param page
 	 * @param rows
 	 * @return

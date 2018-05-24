@@ -33,6 +33,15 @@ public class ContenyController {
 		HttpClientUtil.doGet(REST_BASE_URL+REST_CONTENT_SYSNC_URL+content.getCategoryId());
 		return  result;
 	}
+	@RequestMapping("/edit")
+	@ResponseBody
+	public TaotaoResult editContent(TbContent content){
+		TaotaoResult result = contentService.editContent(content);
+		//调用rest层的服务，同步缓存
+		HttpClientUtil.doGet(REST_BASE_URL+REST_CONTENT_SYSNC_URL+content.getCategoryId());
+		return  result;
+	}
+	
 	@RequestMapping("/query/list")
 	@ResponseBody
 	public EasyUIDataGridResult getList(Long categoryId ,Integer page,Integer rows){
